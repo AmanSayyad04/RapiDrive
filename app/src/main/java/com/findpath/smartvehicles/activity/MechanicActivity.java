@@ -72,15 +72,15 @@ public class MechanicActivity extends FragmentActivity implements OnMapReadyCall
         });
 
 
-        ImageView chargingNearby = findViewById(R.id.charging_nearby);
-        chargingNearby.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-                showAllCustomMarkers();
-            }
-        });
+//        ImageView chargingNearby = findViewById(R.id.charging_nearby);
+//        chargingNearby.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//
+//                showAllCustomMarkers();
+//            }
+//        });
     }
 
     private void requestLocationUpdates() {
@@ -301,6 +301,8 @@ public class MechanicActivity extends FragmentActivity implements OnMapReadyCall
         addCustomMarker(new LatLng(18.14141956	,73.97493038), "Moraya Auto Guarage","+91 7350112335");
         addCustomMarker(new LatLng(18.44159809	,73.85973842), "Mulani Motors","+91 9422502510");
 
+
+        showAllCustomMarkers();
     }
 
     private void addCustomMarker(LatLng latLng, String title, String mobile) {

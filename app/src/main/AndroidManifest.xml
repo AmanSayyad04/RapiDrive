@@ -20,6 +20,9 @@
         android:theme="@style/Theme.SmartVehicles"
         tools:targetApi="31">
         <activity
+            android:name=".activity.OwnerLogin"
+            android:exported="false" />
+        <activity
             android:name=".activity.HelpActivity"
             android:exported="false" />
         <activity

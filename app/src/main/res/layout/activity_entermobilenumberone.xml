@@ -111,11 +111,18 @@
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_gravity="center"/>
-            //android:visiblity="gone"
+
 
 
     </FrameLayout>
 
+        <TextView
+            android:id="@+id/ownerLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#0277BD"
+            android:textStyle="bold"
+            android:text="Login here as a Charging Station Owner." />
 
 
     </LinearLayout>

@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.findpath.smartvehicles.R;
@@ -22,6 +23,7 @@ public class entermobilenumberone extends AppCompatActivity {
 
     EditText enternumber;
     Button getotpbutton;
+    TextView ownerLogIn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,17 @@ public class entermobilenumberone extends AppCompatActivity {
 
         enternumber = findViewById(R.id.input_mobile_number);
         getotpbutton = findViewById(R.id.buttongetotp);
+        ownerLogIn = findViewById(R.id.ownerLogin);
+
+        ownerLogIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(entermobilenumberone.this, OwnerLogin.class);
+                startActivity(intent);
+            }
+        });
+
+
 
         final ProgressBar progressBar = findViewById(R.id.progressbar_sending_otp);
 

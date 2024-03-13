@@ -1,0 +1,211 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="RapiDrive Privacy Policy"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"
+                android:textColor="#8692f7"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Effective Date: 07/03/2024"
+                android:layout_marginBottom="16dp"
+                android:textColor="#A5A1A1"/>
+
+
+            <TextView
+                android:id="@+id/tvIntroduction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Welcome to RapiDrive, an innovative Android app designed to enhance your driving experience by providing e-vehicle charging station locator, slot booking, and mechanic support services. Your privacy is important to us, and we are committed to protecting and safeguarding your personal information. This Privacy Policy explains how we collect, use, and disclose your information when you use the RapiDrive app."
+                android:layout_marginBottom="16dp"
+                android:textColor="#000000"/>
+
+
+            <TextView
+                android:id="@+id/tvInformationTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Information We Collect"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"
+                android:textColor="#FFBB86FC"/>
+
+
+            <TextView
+                android:id="@+id/tvLocationInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Location Information\nRapiDrive requires access to your device's location to provide accurate services such as e-vehicle charging station locator, slot booking, and mechanic support. Your location data may be used to enhance your experience and provide relevant services based on your current location."
+                android:layout_marginBottom="8dp"
+                android:textColor="#000000"/>
+
+
+            <TextView
+                android:id="@+id/tvInternetInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Internet and Network State\nTo ensure a seamless experience, RapiDrive needs access to the internet and network state to fetch real-time data, including charging station availability, garage locations, and other relevant information."
+                android:layout_marginBottom="8dp"
+                android:textColor="#000000"/>
+
+
+            <TextView
+                android:id="@+id/tvPermissionsInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Permissions\nRapiDrive may request additional permissions as needed for specific features. These permissions will be clearly explained within the app, and your explicit consent will be sought before accessing any sensitive information."
+                android:layout_marginBottom="16dp"
+                android:textColor="#000000"/>
+
+
+            <TextView
+                android:id="@+id/tvHowWeUseInfoTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="How We Use Your Information"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"
+                android:textColor="#FFBB86FC"/>
+
+
+            <TextView
+                android:id="@+id/tvChargingInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="E-Vehicle Charging Station Locator and Slot Booking\nWhen using the charging station locator and slot booking features, your location data may be processed to find nearby charging stations and facilitate booking slots. We do not store this information beyond the necessary time needed to provide the requested services."
+                android:layout_marginBottom="8dp"
+                android:textColor="#000000"/>
+
+
+            <TextView
+                android:id="@+id/tvMechanicInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mechanic Support\nIn the event of a breakdown, RapiDrive may use your location data to connect you with nearby garages and provide their contact information. This information is shared only for the purpose of assisting you with mechanic support and is not stored after the service is provided."
+                android:layout_marginBottom="16dp"
+                android:textColor="#000000"/>
+
+
+            <TextView
+                android:id="@+id/tvSecurityTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Data Security"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"
+                android:textColor="#FFBB86FC"/>
+
+
+            <TextView
+                android:id="@+id/tvSecurityInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="We take the security of your information seriously. RapiDrive employs industry-standard security measures to protect your data from unauthorized access, disclosure, alteration, and destruction."
+                android:layout_marginBottom="16dp"
+                android:textColor="#000000"/>
+
+
+            <TextView
+                android:id="@+id/tvThirdPartyTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Third-Party Services"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"
+                android:textColor="#FFBB86FC"/>
+
+
+            <TextView
+                android:id="@+id/tvThirdPartyInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="RapiDrive may use third-party services for certain features, such as mapping services for location-based features. These services may have their own privacy policies, and we encourage you to review them."
+                android:layout_marginBottom="16dp"
+                android:textColor="#000000"/>
+
+
+            <TextView
+                android:id="@+id/tvChangesTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Changes to This Privacy Policy"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"
+                android:textColor="#FFBB86FC"/>
+
+
+            <TextView
+                android:id="@+id/tvChangesInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="We reserve the right to update or modify this Privacy Policy at any time. Any changes will be effective immediately upon posting the updated policy within the RapiDrive app."
+                android:layout_marginBottom="16dp"
+                android:textColor="#000000"/>
+
+
+            <TextView
+                android:id="@+id/tvContactTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Contact Us"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"
+                android:textColor="#FFBB86FC"/>
+
+
+            <TextView
+                android:id="@+id/tvContactInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="If you have any questions, concerns, or requests regarding your privacy while using RapiDrive, please contact us at [your contact email]."
+                android:layout_marginBottom="16dp"
+                android:textColor="#000000"/>
+
+
+            <TextView
+                android:id="@+id/tvThankYou"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Thank you for choosing RapiDrive!"
+                android:textStyle="italic"
+                android:textSize="16sp"
+                android:layout_marginBottom="16dp"
+                android:textColor="#000000"/>
+
+
+            <TextView
+                android:id="@+id/tvCompanyInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="RapiDrive Pvt. Lmt\n Satara"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:textColor="#A5A3A3"/>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

@@ -1,0 +1,225 @@
+<!-- res/layout/activity_help.xml -->
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tvHelpTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Help Section"
+                android:textSize="20sp"
+                android:textColor="@color/purple_500"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Frequently Asked Questions (FAQs) -->
+            <TextView
+                android:id="@+id/tvFAQTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Frequently Asked Questions (FAQs)"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- FAQ 1 -->
+            <TextView
+                android:id="@+id/tvFAQ1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:text="Q: How do I locate charging stations for my e-vehicle?"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/tvFAQ1Answer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A: RapiDrive provides an e-vehicle charging station locator feature. Simply open the app, and it will display nearby charging stations on the map."
+                android:layout_marginBottom="16dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#D3D3D3"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- FAQ 2 -->
+            <TextView
+                android:id="@+id/tvFAQ2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:text="Q: How can I book a slot for charging my e-vehicle?"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/tvFAQ2Answer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A: To book a slot, navigate to the charging station locator, select a station, and follow the on-screen instructions to book a slot for your e-vehicle."
+                android:layout_marginBottom="16dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#D3D3D3"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:text="Q: Can I book a slot for charging my e-vehicle in advance?"
+                android:layout_marginBottom="8dp"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A: Yes, RapiDrive allows you to book a slot for charging your e-vehicle. Simply select a charging station on the map, and follow the on-screen instructions to book a slot."
+                android:layout_marginBottom="16dp"/>
+            <!-- Contact Form -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#D3D3D3"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:text="Q: How long can I reserve a charging slot in advance?"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A: The reservation window may vary depending on the charging station. Generally, you can reserve a slot within a reasonable time frame, such as a few hours to a day in advance."
+                android:layout_marginBottom="16dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#D3D3D3"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:text="Q: What happens if I don't use the reserved charging slot?"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A: If you don't utilize the reserved charging slot within the specified time frame, it may become available for other users. We recommend using the reserved slot promptly to ensure availability."
+                android:layout_marginBottom="16dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#D3D3D3"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:text="Q:  What information is required to book a charging slot?"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A:  Booking a charging slot typically requires your location information and basic user details. The app will prompt you for the necessary information during the booking process."
+                android:layout_marginBottom="16dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#D3D3D3"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:text="Q:  How does the mechanic support feature work?"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A:  In case of a breakdown, RapiDrive's mechanic support feature uses your location data to connect you with nearby garages. You'll receive contact information for these garages to request assistance."
+                android:layout_marginBottom="16dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#D3D3D3"
+                android:layout_marginBottom="16dp"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:text="Q:  Can I use RapiDrive to find garages for general vehicle maintenance?"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A:  While RapiDrive's primary focus is on mechanic support for breakdowns, you can explore the map to discover nearby garages for general vehicle maintenance and services."
+                android:layout_marginBottom="16dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#D3D3D3"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:text="Q:  Are there any fees associated with using RapiDrive's services?"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A:  RapiDrive is a free app to download and use. However, please note that fees associated with charging stations or mechanic services are determined by the respective service providers."
+                android:layout_marginBottom="16dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#D3D3D3"
+                android:layout_marginBottom="16dp"/>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

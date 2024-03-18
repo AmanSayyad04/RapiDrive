@@ -12,11 +12,11 @@ import com.findpath.smartvehicles.R;
 
 public class Mechanic_info extends AppCompatActivity {
 
-    TextView markertext;
-    TextView address;
+    TextView textViewTitle;
+    TextView textViewAddress;
     double destinationLatitude;
     double destinationLongitude;
-    TextView mobile;
+    //TextView mobile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,13 +32,13 @@ public class Mechanic_info extends AppCompatActivity {
 
         // Now you can use 'title' and 'address' to display in your activity
         // For example, if you have TextViews with ids 'textViewTitle' and 'textViewAddress':
-        TextView textViewTitle = findViewById(R.id.Marker_title);
-        TextView textViewAddress = findViewById(R.id.address);
-        mobile = findViewById(R.id.mobile_number);
+        textViewTitle = findViewById(R.id.Marker_title);
+        textViewAddress = findViewById(R.id.address);
+        //mobile = findViewById(R.id.mobile_number);
 
         textViewTitle.setText(title);
         textViewAddress.setText(address);
-        mobile.setText("Mob number " + mob);
+//        mobile.setText("Mob number " + mob);
 
         // Assuming you have a button with the id 'whatsappButton' in your layout
         findViewById(R.id.whatsappButton).setOnClickListener(new View.OnClickListener() {
@@ -47,7 +47,21 @@ public class Mechanic_info extends AppCompatActivity {
                 openWhatsAppChat(mob);
             }
         });
+
+        findViewById(R.id.callButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialPhoneNumber(mob);
+            }
+        });
     }
+
+    private void dialPhoneNumber(String mob) {
+        Intent dialIntent = new Intent(Intent.ACTION_DIAL);
+        dialIntent.setData(Uri.parse("tel:" + mob));
+        startActivity(dialIntent);
+    }
+
     public void getDirections(View view) {
         String uri = "http://maps.google.com/maps?saddr=" + "&daddr=" + destinationLatitude + "," + destinationLongitude;
         Intent intent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(uri));

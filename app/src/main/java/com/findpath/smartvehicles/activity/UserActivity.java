@@ -9,13 +9,18 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.findpath.smartvehicles.R;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class UserActivity extends AppCompatActivity {
+
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user);
+
+        mAuth = FirebaseAuth.getInstance();
 
         Intent intent = getIntent();
         String firstName = intent.getStringExtra("firstName");
@@ -126,11 +131,20 @@ public class UserActivity extends AppCompatActivity {
         logOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mAuth.signOut();
                 Intent intent = new Intent(UserActivity.this, entermobilenumberone.class);
+                // Clear the back stack so that pressing back after logout doesn't take the user back to the home page
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
+                finish(); // Optional, to close the current activity
             }
         });
 
 
+    }
+    @Override
+    public void onBackPressed() {
+        // Do nothing or handle differently as per your app's requirement
+        super.onBackPressed();
     }
 }

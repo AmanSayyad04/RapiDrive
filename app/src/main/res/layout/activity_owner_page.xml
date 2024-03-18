@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.OwnerPage">
+
+    <EditText
+        android:id="@+id/editText_station_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Station Name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Latitude EditText -->
+    <EditText
+        android:id="@+id/editText_latitude"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Latitude"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_station_name" />
+
+    <!-- Longitude EditText -->
+    <EditText
+        android:id="@+id/editText_longitude"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Longitude"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_latitude" />
+
+    <!-- Contact Number EditText -->
+    <EditText
+        android:id="@+id/editText_contact_number"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Contact Number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_longitude" />
+
+    <!-- Email EditText -->
+    <EditText
+        android:id="@+id/editText_email"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_contact_number" />
+
+    <!-- Speed Selector Spinner -->
+    <Spinner
+        android:id="@+id/spinner_speed"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_email" />
+
+    <!-- Charger Connector Radio Buttons -->
+    <RadioGroup
+        android:id="@+id/radioGroup_charger_connectors"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_speed">
+
+        <RadioButton
+            android:id="@+id/radioButton_type1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Type 1" />
+
+        <RadioButton
+            android:id="@+id/radioButton_type2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Type 2" />
+        <RadioButton
+            android:id="@+id/radioButton_type3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Type 3" />
+        <RadioButton
+            android:id="@+id/radioButton_type4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Type 4" />
+
+        <!-- Add more RadioButtons as needed -->
+
+    </RadioGroup>
+</androidx.constraintlayout.widget.ConstraintLayout>

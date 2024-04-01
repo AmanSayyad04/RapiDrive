@@ -1,0 +1,50 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textViewSlotNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Slot Number: "
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/buttonSlot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/textViewSlotNumber"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:text="Slot Off" />
+
+
+    <TextView
+        android:id="@+id/textViewPricePerUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewSlotNumber"
+        android:layout_marginTop="8dp"
+        android:text="Price Per Unit: "
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textViewSelectedOption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewPricePerUnit"
+        android:layout_marginTop="8dp"
+        android:text="Selected Option: "
+        android:textSize="16sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/textViewSelectedOption"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/black" />
+
+</RelativeLayout>

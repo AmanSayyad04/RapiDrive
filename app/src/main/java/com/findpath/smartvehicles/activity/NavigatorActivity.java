@@ -1,5 +1,7 @@
 package com.findpath.smartvehicles.activity;
 
+import static android.content.ContentValues.TAG;
+
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -8,6 +10,7 @@ import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -29,6 +32,12 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -45,6 +54,8 @@ public class NavigatorActivity extends FragmentActivity implements
     private EditText locationSearch;
     private ImageView searchButton;
     private Marker currentUserLocationMarker;
+    private FirebaseFirestore db;
+
 
 
     private List<Marker> customMarkers;
@@ -54,6 +65,9 @@ public class NavigatorActivity extends FragmentActivity implements
 
         binding = ActivityNavigatorBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        db = FirebaseFirestore.getInstance();
+
 
         locationSearch = findViewById(R.id.location_search);
         searchButton = findViewById(R.id.search_address);
@@ -72,15 +86,14 @@ public class NavigatorActivity extends FragmentActivity implements
         });
 
 
-        ImageView chargingNearby = findViewById(R.id.charging_nearby);
-        chargingNearby.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-                showAllCustomMarkers();
-            }
-        });
+//        ImageView chargingNearby = findViewById(R.id.charging_nearby);
+//        chargingNearby.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                showAllCustomMarkers();
+//            }
+//        });
     }
 
     private void requestLocationUpdates() {
@@ -195,6 +208,10 @@ public class NavigatorActivity extends FragmentActivity implements
 
         addCustomMarkers();
 
+        showAllCustomMarkers();
+
+//        fetchChargingStationsFromFirestore();
+
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
@@ -216,6 +233,30 @@ public class NavigatorActivity extends FragmentActivity implements
 
     }
 
+//    private void fetchChargingStationsFromFirestore() {
+//        db.collection("chargingStations")
+//                .get()
+//                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+//                        if (task.isSuccessful()) {
+//                            for (QueryDocumentSnapshot document : task.getResult()) {
+//                                // Retrieve latitude and longitude from Firestore document
+//                                Double latitude = document.getDouble("latitude");
+//                                Double longitude = document.getDouble("longitude");
+//                                String title = document.getString("chargingStationName");
+//                                if (latitude != null && longitude != null) {
+//                                    LatLng latLng = new LatLng(latitude, longitude);
+//                                    addCustomMarker(latLng, title);
+//                                }
+//                            }
+//                        } else {
+//                            Log.d(TAG, "Error getting documents: ", task.getException());
+//                        }
+//                    }
+//                });
+//    }
+
     private String getAddressFromLatLng(LatLng latLng) {
         Geocoder geocoder = new Geocoder(this, Locale.getDefault());
 
@@ -233,36 +274,40 @@ public class NavigatorActivity extends FragmentActivity implements
     }
 
     private void addCustomMarkers() {
-        // Load custom marker icons from resources and add custom markers
-        // ...
+        String ownerId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        db.collection("owners").document(ownerId).collection("chargingStations")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                // Retrieve latitude and longitude from Firestore document
+                                String latitudeString = document.getString("latitude");
+                                String longitudeString = document.getString("longitude");
+                                String title = document.getString("chargingStationName");
 
-        // Example:
-        addCustomMarker(new LatLng(18.538, 73.8485), "Synergy Solutions AC Charging Station 2");
-        addCustomMarker(new LatLng(18.763, 73.4252), "Lonavla Wax Museum DC Charging Station");
-        addCustomMarker(new LatLng(17.0749 , 74.2227), "Tellus Power DC Charging Station");
-        addCustomMarker(new LatLng(16.8433 , 74.5859), "Ashnni Pilot Circle Station");
-        addCustomMarker(new LatLng(18.5887678 , 73.7825231), "CopaCabana");
-        addCustomMarker(new LatLng(18.9284545096609 , 72.8320303138997), "Kala Ghoda Cafe");
-        addCustomMarker(new LatLng(18.11289 , 73.98985), "Vikarsh Nano technology, Dhangarwadi");
-        addCustomMarker(new LatLng(17.92564438 , 73.65552014), "Hotel Dreamland, ST Main Market Mahabaleshwar");
-        addCustomMarker(new LatLng(17.92655754 , 73.69586565), "The Grand Legacy, Panchgani-Mahabaleshwar Road");
-        addCustomMarker(new LatLng(16.6869187 , 74.2703805), "McDonalds");
-        addCustomMarker(new LatLng(17.63820763 , 74.01209174), "Amrai Hotel & Resort , NH 4 Shendre");
-        addCustomMarker(new LatLng(19.25612 , 72.97145), "Heritage Motors, Ghodbunder");
-        addCustomMarker(new LatLng(19.1972 , 72.96321), "Heritage Motors, Panchpakhadi");
-        addCustomMarker(new LatLng(19.277922 , 72.880256), "Inderjit Cars, Mira Road");
-        addCustomMarker(new LatLng(17.695980908204717, 74.01587009526581), "Kazam Charging Station");
-        addCustomMarker(new LatLng(17.684123951030173, 74.02222156620564), "Electric Vehicle Charging Station");
-        addCustomMarker(new LatLng(17.679626279824976, 74.02179241276376), "15A, Pune - Bengaluru Hwy");
-        addCustomMarker(new LatLng(16.6869187 , 74.2703805), "E-Fill Charging Station");
-        addCustomMarker(new LatLng(17.951666402421566, 73.93468913858099), "Electric Vehicle Charging Station");
-        addCustomMarker(new LatLng(17.639396516542654, 74.01241593064613), "TATA Charging Station");
-        addCustomMarker(new LatLng(17.76805895789883, 73.98867899995774), "Electric Vehicle Charging Station");
-        addCustomMarker(new LatLng(17.694930378913735, 74.01227633858099), "PHENIX ELECTRIC VEHICLE SERVICE CENTRE");
-        addCustomMarker(new LatLng(17.679311649467895, 74.02188937567911), "Electric Vehicle Charging Station");
-        addCustomMarker(new LatLng(17.443403075597374, 74.09429083064612), "E-Fill Charging Station");
+                                if (latitudeString != null && longitudeString != null) {
+                                    try {
+                                        // Convert latitude and longitude strings to doubles
+                                        double latitude = Double.parseDouble(latitudeString);
+                                        double longitude = Double.parseDouble(longitudeString);
 
-        // Add more custom markers as needed
+                                        LatLng latLng = new LatLng(latitude, longitude);
+                                        addCustomMarker(latLng, title);
+                                    } catch (NumberFormatException e) {
+                                        Log.e(TAG, "Error parsing latitude or longitude: " + e.getMessage());
+                                    }
+                                } else {
+                                    Log.e(TAG, "Latitude or longitude is null for charging station: " + title);
+                                }
+                            }
+                        } else {
+                            Log.e(TAG, "Error getting documents: ", task.getException());
+                        }
+                    }
+
+                });
     }
 
     private void addCustomMarker(LatLng latLng, String title) {
@@ -272,7 +317,6 @@ public class NavigatorActivity extends FragmentActivity implements
         Marker marker = mMap.addMarker(new MarkerOptions()
                 .position(latLng)
                 .title(title)
-                .visible(false)
                 .icon(customMarkerIcon));
 
         customMarkers.add(marker);

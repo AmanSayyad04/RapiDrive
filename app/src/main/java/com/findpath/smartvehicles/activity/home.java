@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
@@ -40,6 +41,15 @@ public class home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         ImageView drawerImageView = findViewById(R.id.user);
+        Button aboutUs = findViewById(R.id.aboutUs);
+
+        aboutUs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(home.this, AboutUs.class);
+                startActivity(intent);
+            }
+        });
 
         drawerImageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -138,6 +148,7 @@ public class home extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        super.onBackPressed();
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(home.this);
         alertDialog.setTitle("Exit App");
         alertDialog.setMessage("Do you want to exit app?");

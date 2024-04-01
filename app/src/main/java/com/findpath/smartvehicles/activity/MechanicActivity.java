@@ -301,6 +301,65 @@ public class MechanicActivity extends FragmentActivity implements OnMapReadyCall
         addCustomMarker(new LatLng(18.14141956	,73.97493038), "Moraya Auto Guarage","+91 7350112335");
         addCustomMarker(new LatLng(18.44159809	,73.85973842), "Mulani Motors","+91 9422502510");
 
+        addCustomMarker(new LatLng(17.67742372	,73.98659259), "ANIKET AUTO GARAGE","+91 7420901319");
+        addCustomMarker(new LatLng(17.67848683	,73.98899585), "SHREE GANESH AUTO GARAGE","+91 9975900706");
+        addCustomMarker(new LatLng(17.68012237	,73.98925334), "GURUKRUPA AUTO GARAGE","+91 9850364622");
+        addCustomMarker(new LatLng(17.68012237	,73.98749381), "S AUTO GARAGE","+91 8805252787");
+        addCustomMarker(new LatLng(17.68257565	,73.98702174), "Shivam Auto Garage","+91 8788283106");
+        addCustomMarker(new LatLng(17.68547866	,73.98573428), "JAGDAMB AUTO GARAGE","+91 9890974562");
+        addCustomMarker(new LatLng(17.6881363	,73.98749381), "Mahrashtra Auto Garage","+91 8668245102");
+        addCustomMarker(new LatLng(17.68895403	,74.00045425), "Harish Garage","+91 9850636343");
+        addCustomMarker(new LatLng(17.69303818	,73.9923213), "Suraj Auto Garage","+91 9552411328");
+        addCustomMarker(new LatLng(17.69083036	,74.01622515), "Majgaonkar Garage","+91 9422403181");
+        addCustomMarker(new LatLng(17.72019052	,74.00474852), "Khan Auto Shop","+91 9975213376");
+        addCustomMarker(new LatLng(17.65549189	,73.94704681), "Shivaji Auto Garage","+91 9834901903");
+        addCustomMarker(new LatLng(17.65640814	,73.94284105), "SHREE SWAMI SAMARTH AUTO GARAGE","+91 9766554417");
+        addCustomMarker(new LatLng(17.66036456	,73.93818408), "Sadguru Krupa Auto Garage","+91 9011775536");
+        addCustomMarker(new LatLng(17.66105974	,73.93277675), "Vighnesh Auto garage","+91 9730835017");
+        addCustomMarker(new LatLng(17.67030124	,73.92985851), "Shubham Auto Garage","+91 8378039248");
+        addCustomMarker(new LatLng(17.373251	,73.92038448), "Sai Samrat Motars","+91 9637249331");
+        addCustomMarker(new LatLng(17.37487767	,73.9129445), "AJ AUTOMOBILES","+91 7709887495");
+        addCustomMarker(new LatLng(17.37538963	,73.9108631), "Shidhivinayak Auto Garage","+91 9881577462");
+        addCustomMarker(new LatLng(17.37257637	,73.90589833), "HEM AGENCY PATAN","+91 8888837655");
+        addCustomMarker(new LatLng(17.36960948	,73.89870465), "Koyana Baike Garage","+91 9822773590");
+        addCustomMarker(new LatLng(17.3713502	,73.89797509), "Shree Samarth Krupa Auto Garage","+91 8956339278");
+        addCustomMarker(new LatLng(17.36799161	,73.89643013), " Dosti Auto Garrage","+91 7558605754");
+        addCustomMarker(new LatLng(17.37926131	,73.89774039), "Sagar Auto Garage","+91 9689135106");
+        addCustomMarker(new LatLng(17.67447714	,74.03448343), "Om Sai Ram Auto Garage","+91 7248968057");
+        addCustomMarker(new LatLng(17.67365934	,74.03791666), "RAJMUDRA AUTO GARAGE","+91 9579362693");
+        addCustomMarker(new LatLng(17.69473679	,74.14916933), "Gurukrupa Auto","+91 9822806361");
+        addCustomMarker(new LatLng(17.69745563	,74.15317302), "R K MOTORS","+91 7397865027");
+        addCustomMarker(new LatLng(17.69837552	,74.15461069), "SHRI DATTA TRACTOR GARAGE","+91 8600398226");
+        addCustomMarker(new LatLng(17.69843756	,74.15490891), "Sahyadri Automobiles","+91 9730494030");
+        addCustomMarker(new LatLng(17.69905911	,74.15584963), "Shivaparvati Motors","+91 9923035135");
+        addCustomMarker(new LatLng(17.6933497	,74.16448871), "BHOSALE GARAGE","+91 9921594632");
+        addCustomMarker(new LatLng(17.69702835	,74.16726743), "Yashwant Auto garage","+91 9767628041");
+        addCustomMarker(new LatLng(17.70184143	,74.16553524), "N.N.Dias Motor Garage, Koregaon","+91 9028407308");
+        addCustomMarker(new LatLng(17.70191019	,74.16683439), "Shivshakti Auto Garage","+91 9923477450");
+        addCustomMarker(new LatLng(17.70246025	,74.17322185), "Vaishanavi Auto Garage","+91 7517990884");
+        addCustomMarker(new LatLng(17.70406885	,74.17532352), "Lucky Auto Garage and Servicing Cente","+91 9623182312");
+        addCustomMarker(new LatLng(17.27642477	,74.18405007), "BABA Auto Garage","+91 9096027717");
+        addCustomMarker(new LatLng(17.27757218	,74.18233346), "JYORTILING AUTO GARAGE","+91 8007541170");
+        addCustomMarker(new LatLng(17.28093242	,74.19228982), "Royal Auto Garage","+91 9172248693");
+        addCustomMarker(new LatLng(17.28091878	,74.19044795), "Super Auto Garage","+91 7758019539");
+        addCustomMarker(new LatLng(17.98247702	,74.42967423), "Shree krushna Auto Garage","+91 7972626526");
+        addCustomMarker(new LatLng(17.99450353	,74.43583914), "Ring Road automobiles and garage","+91 7020438181");
+        addCustomMarker(new LatLng(17.98847326	,74.44010914), "Ghorpade Garege","+91 8767644851");
+        addCustomMarker(new LatLng(17.99241481	,74.44030529), "kanifnath auto garage","+91 9552455059");
+        addCustomMarker(new LatLng(17.99253923	,74.44046932), "Jay Ganesh Auto Garage","+91 9689409873");
+        addCustomMarker(new LatLng(17.99344116	,74.44077278), "Samarth Auto Garage","+91 7745017657");
+        addCustomMarker(new LatLng(17.99340464	,74.44448643), "Shiv Auto Garaj","+91 9552110054");
+        addCustomMarker(new LatLng(17.66366018	,75.89732334), "Prakash motor garage","+91 9423264041");
+        addCustomMarker(new LatLng(17.67007921	,75.89720196), "Imran Auto Garage","+91 9130900506");
+        addCustomMarker(new LatLng(17.67036835	,75.90072207), "City Garage","+91 9730362775");
+        addCustomMarker(new LatLng(17.68725332	,75.8947743), "Shri Ganesh Motor Garage","+91 9860153893");
+        addCustomMarker(new LatLng(17.58307689	,74.2093667), "Shrikushna Auto Garage And Car Wash","+91 9975998019");
+        addCustomMarker(new LatLng(17.58487694	,74.20387354), "Puna car cear Rahimatpur","+91 9552303868");
+        addCustomMarker(new LatLng(17.58585877	,74.20219984), "National Tyre Works & Truck Garage","+91 7385923504");
+        addCustomMarker(new LatLng(17.58700424	,74.20099821), "Mirage Garage","+91 8080914894");
+        addCustomMarker(new LatLng(17.58536786	,74.19971075), "Harun Motar Garage","+91 9860290652");
+
+
 
         showAllCustomMarkers();
     }

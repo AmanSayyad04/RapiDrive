@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.AboutUs">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Company Logo -->
+            <ImageView
+                android:id="@+id/imageCompanyLogo"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/company_logo"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Company Name -->
+            <TextView
+                android:id="@+id/textCompanyName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RapiDrive"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Company Description -->
+            <TextView
+                android:id="@+id/textCompanyDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:text="Our mission at RapiDrive is to revolutionize the driving experience by providing innovative solutions for electric vehicle owners and motorists alike. We are committed to promoting sustainable transportation through our e-vehicle charging station locator and mechanic support services.\n       With RapiDrive, finding charging stations for your electric vehicle is effortless. Our app offers real-time location-based services to help you locate nearby charging stations and book slots conveniently.\n    In addition to our charging station locator, RapiDrive also offers reliable mechanic support in case of vehicle breakdowns. We connect you with nearby garages and provide contact information for quick assistance, ensuring a seamless driving experience."
+                android:gravity="center"
+                android:layout_marginBottom="32dp"/>
+
+            <!-- Team Section -->
+            <TextView
+                android:id="@+id/textTeamTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Our Team"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Team Member 1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <ImageView
+                    android:id="@+id/imageTeamMember1"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/shubhya"
+                    android:layout_marginEnd="16dp"/>
+
+                <TextView
+                    android:id="@+id/textTeamMember1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Shubham Babar"
+                    android:textStyle="bold"
+                    android:textSize="16sp"/>
+            </LinearLayout>
+
+            <!-- Team Member 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <ImageView
+                    android:id="@+id/imageTeamMember2"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/me"
+                    android:layout_marginEnd="16dp"/>
+
+                <TextView
+                    android:id="@+id/textTeamMember2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Aman Sayyad"
+                    android:textStyle="bold"
+                    android:textSize="16sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <ImageView
+                    android:id="@+id/imageTeamMember3"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/amnya"
+                    android:layout_marginEnd="16dp"/>
+
+                <TextView
+                    android:id="@+id/textTeamMember3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Amaan Patel"
+                    android:textStyle="bold"
+                    android:textSize="16sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <ImageView
+                    android:id="@+id/imageTeamMember4"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/omkya"
+                    android:layout_marginEnd="16dp"/>
+
+                <TextView
+                    android:id="@+id/textTeamMember4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Omkar Ghadage"
+                    android:textStyle="bold"
+                    android:textSize="16sp"/>
+            </LinearLayout>
+
+
+
+            <!-- Contact Section -->
+            <TextView
+                android:id="@+id/textContactTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Contact Us"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Company Address -->
+            <TextView
+                android:id="@+id/textCompanyAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Main Branch: Satara, 415002"
+                android:gravity="center"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Company Email -->
+            <TextView
+                android:id="@+id/textCompanyEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="contact@rapidrive.com"
+                android:gravity="center"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Company Phone Number -->
+            <TextView
+                android:id="@+id/textCompanyPhoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="+91 9604097964"
+                android:textColor="#000000"
+                android:gravity="center"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

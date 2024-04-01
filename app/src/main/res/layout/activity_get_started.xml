@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.GetStarted"
+    android:orientation="vertical"
+    app:flow_horizontalAlign="center">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="40dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/get_started"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+
+        android:text="RapiDrive"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="15dp"
+
+        android:text="Quiker and Easy Entry Approvals"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:text="We keep your personal information private, safe and secure."
+
+        android:layout_marginTop="15dp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="16sp"/>
+
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:padding="8dp"
+        android:text="Get Started"
+        android:textSize="20sp"
+        app:cornerRadius="12dp" />
+
+</LinearLayout>

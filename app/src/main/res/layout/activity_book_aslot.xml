@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.BookASlot">
+
+    <TextView
+        android:id="@+id/textViewBookASlot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Book A Slot"
+        android:textSize="24sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <LinearLayout
+        android:id="@+id/monthSelectionLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/textViewBookASlot"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp">
+
+        <!-- Left arrow -->
+        <ImageView
+            android:id="@+id/imageViewLeftArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/left_arrow_ic"
+            android:layout_marginEnd="8dp"/>
+
+        <!-- Month TextView -->
+        <TextView
+            android:id="@+id/textViewSelectedMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="March 2024"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_marginHorizontal="8dp"/>
+
+        <!-- Right arrow -->
+        <ImageView
+            android:id="@+id/imageViewRightArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/right_arrow_ic"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/bookSlotButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="8dp"
+        android:text="Continue for payment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,4 +10,20 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_mechanic">MechanicActivity</string>
+
+    <string name="screen1">RapiDrive</string>
+    <string name="screen2">Find and Locate Charging Stations Near You</string>
+    <string name="screen3">Find and Locate Mechanical Service Support Near You</string>
+
+    <string name="screen1desc">We can explore the services that are provided for E-Vehicles.</string>
+    <string name="screen3desc">Discover available mechanical service support on emergency condition.</string>
+    <string name="screen2desc">Find available charging stations easily and book your charging slots.</string>
+
+
+    <string-array name="spinner_options">
+        <item>Option 1</item>
+        <item>Option 2</item>
+        <item>Option 3</item>
+    </string-array>
+
 </resources>

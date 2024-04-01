@@ -6,97 +6,219 @@
     android:layout_height="match_parent"
     tools:context=".activity.OwnerPage">
 
+    <!-- Title TextView -->
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Owner Charging Station Form"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="16dp"/>
+
+    <!-- Charging Station Name Input -->
     <EditText
-        android:id="@+id/editText_station_name"
+        android:id="@+id/editTextChargingStationName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Station Name"
-        app:layout_constraintStart_toStartOf="parent"
+        android:hint="Charging Station Name"
+        android:background="@drawable/edit_text_background"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewTitle"
+        android:layout_margin="16dp"/>
 
-    <!-- Latitude EditText -->
+    <!-- Latitude Input -->
     <EditText
-        android:id="@+id/editText_latitude"
+        android:id="@+id/editTextLatitude"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="Latitude"
+        android:background="@drawable/edit_text_background"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:layout_marginStart="18dp"
+        app:layout_constraintEnd_toStartOf="@id/editTextLongitude"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_station_name" />
+        app:layout_constraintTop_toBottomOf="@id/editTextChargingStationName"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"/>
 
-    <!-- Longitude EditText -->
+    <!-- Longitude Input -->
     <EditText
-        android:id="@+id/editText_longitude"
+        android:id="@+id/editTextLongitude"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="Longitude"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_latitude" />
+        android:background="@drawable/edit_text_background"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewLocationButton"
+        app:layout_constraintStart_toEndOf="@id/editTextLatitude"
+        app:layout_constraintTop_toTopOf="@id/editTextLatitude"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="0dp"/>
 
-    <!-- Contact Number EditText -->
+    <!-- ImageView for Location Button -->
+    <ImageView
+        android:id="@+id/imageViewLocationButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/get_current_location"
+        app:layout_constraintTop_toTopOf="@id/editTextLatitude"
+        app:layout_constraintBottom_toBottomOf="@id/editTextLatitude"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="16dp"
+        android:clickable="true"
+        android:padding="8dp"/>
+
+    <!-- WhatsApp Number Input -->
     <EditText
-        android:id="@+id/editText_contact_number"
+        android:id="@+id/editTextWhatsAppNumber"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Contact Number"
-        app:layout_constraintStart_toStartOf="parent"
+        android:hint="WhatsApp Number"
+        android:background="@drawable/edit_text_background"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:layout_marginStart="18dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_longitude" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextLatitude"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"/>
 
-    <!-- Email EditText -->
+    <!-- Email Input -->
     <EditText
-        android:id="@+id/editText_email"
+        android:id="@+id/editTextEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="Email"
-        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/edit_text_background"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_contact_number" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextWhatsAppNumber"
+        android:layout_margin="16dp"/>
 
-    <!-- Speed Selector Spinner -->
+    <!-- Submit Button -->
+    <Button
+        android:id="@+id/buttonSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextEmail"
+        android:layout_margin="16dp"/>
+
+    <!-- Add Charge Slots Section -->
+    <TextView
+        android:id="@+id/textViewAddChargeSlots"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Charge Slots"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/buttonSubmit"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"/>
+
+    <!-- Charge Slot Number Input -->
+    <EditText
+        android:id="@+id/editTextSlotNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/edit_text_background"
+        android:hint="Slot Number"
+        android:paddingStart="12dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/editTextPricePerUnit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewAddChargeSlots" />
+
+    <!-- Price Per Unit Input -->
+    <EditText
+        android:id="@+id/editTextPricePerUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/edit_text_background"
+        android:hint="Price Per Unit"
+        android:paddingStart="12dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextSlotNumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/editTextSlotNumber"
+        app:layout_constraintTop_toTopOf="@id/editTextSlotNumber" />
+
+    <!-- Options Spinner -->
+
+    <!-- Add Slot Button -->
+
     <Spinner
-        android:id="@+id/spinner_speed"
+        android:id="@+id/spinnerOptions"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_email" />
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/editTextPricePerUnit"
+        app:layout_constraintStart_toStartOf="@+id/editTextSlotNumber"
+        app:layout_constraintTop_toBottomOf="@+id/editTextSlotNumber"
+        android:entries="@array/spinner_options" />
 
-    <!-- Charger Connector Radio Buttons -->
-    <RadioGroup
-        android:id="@+id/radioGroup_charger_connectors"
-        android:layout_width="0dp"
+    <Button
+        android:id="@+id/buttonAddSlot"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Add Slot"
+        android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_speed">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerOptions" />
 
-        <RadioButton
-            android:id="@+id/radioButton_type1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Type 1" />
+    <Button
+        android:id="@+id/btnFinish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginBottom="32dp"
+        android:text="Finish"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone"/>
 
-        <RadioButton
-            android:id="@+id/radioButton_type2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Type 2" />
-        <RadioButton
-            android:id="@+id/radioButton_type3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Type 3" />
-        <RadioButton
-            android:id="@+id/radioButton_type4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Type 4" />
 
-        <!-- Add more RadioButtons as needed -->
-
-    </RadioGroup>
 </androidx.constraintlayout.widget.ConstraintLayout>

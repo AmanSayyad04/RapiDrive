@@ -18,4 +18,6 @@
     <color name="color_view2">#ededed</color>
 
     <color name="success">#28a745</color>
+    <color name="yellow">#F9A825</color>
+    <color name="grey">#948D8D</color>
 </resources>

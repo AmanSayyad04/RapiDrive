@@ -1,5 +1,7 @@
 package com.findpath.smartvehicles.activity;
 
+import static android.content.ContentValues.TAG;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -31,6 +33,9 @@ public class DetailsActivity extends AppCompatActivity implements SlotAdapter.On
     private List<Slot> slotList;
     private FirebaseFirestore db;
     private Button bookSlot;
+    private String selectedSlotId;
+    private String chargingStationId;
+    private String fetchedChargingStationId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,8 +44,8 @@ public class DetailsActivity extends AppCompatActivity implements SlotAdapter.On
 
         String title = getIntent().getStringExtra("title");
         String address = getIntent().getStringExtra("address");
-        String chargingStationId = getIntent().getStringExtra("chargingStationId");
-
+        chargingStationId = getIntent().getStringExtra("chargingStationId");
+        Log.d(TAG, "abc" + chargingStationId);
         // Set the title and address
         TextView textViewTitle = findViewById(R.id.Marker_title);
         TextView textViewAddress = findViewById(R.id.address);
@@ -59,18 +64,27 @@ public class DetailsActivity extends AppCompatActivity implements SlotAdapter.On
         slotAdapter = new DetailsSlotAdapter(this, slotList);
         recyclerView.setAdapter(slotAdapter);
 
+        Log.e(TAG, "Charging Station ID: " + chargingStationId);
+
+
         fetchChargingStationId();
 
         // Fetch slot data from Firestore
         fetchSlotData(chargingStationId);
+        Log.d(TAG, "ghi" + chargingStationId);
 
-        bookSlot.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(DetailsActivity.this,BookASlot.class);
-                startActivity(intent);
-            }
-        });
+        bookASlot();
+
+
+
+
+    }
+
+
+
+    public void onSlotClick(String slotId) {
+        // Store the selected slot ID in a variable to pass it to the BookASlot activity
+        selectedSlotId = slotId;
     }
 
     private void fetchChargingStationId() {
@@ -86,9 +100,10 @@ public class DetailsActivity extends AppCompatActivity implements SlotAdapter.On
                         // Get the first document (assuming there's only one charging station per owner)
                         DocumentSnapshot documentSnapshot = queryDocumentSnapshots.getDocuments().get(0);
                         // Retrieve the charging station ID
-                        String chargingStationId = documentSnapshot.getId();
+                        fetchedChargingStationId = documentSnapshot.getId(); // Change variable name
                         // Now that we have the charging station ID, we can fetch slot data
-                        fetchSlotData(chargingStationId);
+                        fetchSlotData(fetchedChargingStationId);
+                        Log.d(TAG, "def" + fetchedChargingStationId);
                     } else {
                         // No charging station document found
                         Log.d("DetailsActivity", "No charging station document found for owner ID: " + ownerId);
@@ -99,7 +114,10 @@ public class DetailsActivity extends AppCompatActivity implements SlotAdapter.On
                     Log.e("DetailsActivity", "Error fetching charging station data: " + e.getMessage());
                     Toast.makeText(DetailsActivity.this, "Failed to fetch charging station data", Toast.LENGTH_SHORT).show();
                 });
+
+
     }
+
 
     private void fetchSlotData(String chargingStationId) {
         if (chargingStationId != null) {
@@ -119,9 +137,8 @@ public class DetailsActivity extends AppCompatActivity implements SlotAdapter.On
                                     isOccupiedValue = isOccupied.booleanValue();
                                 }
 
-
                                 Slot slot = new Slot(slotNumber, pricePerUnit, selectedOption, isOccupiedValue);
-
+                                Log.d(TAG, "aman" + chargingStationId);
                                 slot.setSlotId(document.getId());
                                 slotList.add(slot);
                             }
@@ -131,6 +148,38 @@ public class DetailsActivity extends AppCompatActivity implements SlotAdapter.On
                         }
                     });
         }
+    }
+
+    private void bookASlot() {
+        bookSlot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Check if any radio button is selected
+                boolean isRadioButtonSelected = false;
+                for (Slot slot : slotList) {
+                    if (slot.isSelected()) {
+                        isRadioButtonSelected = true;
+                        // Store the selected slot ID in the selectedSlotId variable
+                        selectedSlotId = slot.getSlotId();
+                        break;
+                    }
+                }
+
+                // If no radio button is selected, show a toast message and return
+                if (!isRadioButtonSelected) {
+                    Toast.makeText(DetailsActivity.this, "Please select a slot to proceed", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                // At least one radio button is selected, proceed to book a slot activity
+                Intent intent = new Intent(DetailsActivity.this, BookASlot.class);
+                // Pass the selected slot ID to BookASlot activity
+                intent.putExtra("slotId", selectedSlotId);
+                intent.putExtra("chargingId", fetchedChargingStationId);
+                Log.d(TAG, "abcdefg" + fetchedChargingStationId);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

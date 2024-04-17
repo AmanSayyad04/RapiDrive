@@ -6,6 +6,7 @@ public class Slot {
     private String pricePerUnit;
     private String selectedOption;
     private boolean isOccupied = false;
+    private boolean isSelected;
 
     public Slot() {
         // Default constructor required for Firestore
@@ -57,5 +58,13 @@ public class Slot {
 
     public void setOccupied(boolean occupied) {
         isOccupied = occupied;
+    }
+
+    public boolean isSelected() {
+        return isSelected;
+    }
+
+    public void setSelected(boolean selected) {
+        isSelected = selected;
     }
 }

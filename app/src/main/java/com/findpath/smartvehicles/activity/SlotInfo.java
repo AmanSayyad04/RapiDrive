@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Switch;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -24,14 +23,16 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SlotInfo extends AppCompatActivity implements SlotAdapter.OnSlotStatusChangedListener{
+public class SlotInfo extends AppCompatActivity implements SlotAdapter.OnSlotStatusChangedListener, SlotAdapter.OnSlotClickListener{
 
     private RecyclerView recyclerView;
     private SlotAdapter slotAdapter;
     private List<Slot> slotList;
     private FirebaseFirestore db;
     private String chargingStationId;
-    private Button addmore;
+    private Button addmore, addTime;
+    private String selectedSlotId;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,9 +49,10 @@ public class SlotInfo extends AppCompatActivity implements SlotAdapter.OnSlotSta
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         slotList = new ArrayList<>();
-        slotAdapter = new SlotAdapter(this, slotList, this);
+        slotAdapter = new SlotAdapter(this, slotList, this, this, null, getOwnerId());
         recyclerView.setAdapter(slotAdapter);
         addmore = findViewById(R.id.buttonAddMore);
+        //addTime = findViewById(R.id.buttonAddTimeSlot);
 
 
         addmore.setOnClickListener(new View.OnClickListener() {
@@ -62,10 +64,23 @@ public class SlotInfo extends AppCompatActivity implements SlotAdapter.OnSlotSta
                 startActivity(intent);
             }
         });
+
+//        addTime.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(SlotInfo.this, TimeActivity.class);
+//                intent.putExtra("slotId", selectedSlotId);
+//                startActivity(intent);
+//            }
+//        });
+    }
+
+    private String getOwnerId() {
+        return FirebaseAuth.getInstance().getCurrentUser().getUid();
     }
 
     private void getChargingStationIdFromFirebase() {
-        String ownerId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        String ownerId = getOwnerId();
 
         // Query Firestore to retrieve the charging station document associated with the owner
         db.collection("owners")
@@ -82,6 +97,8 @@ public class SlotInfo extends AppCompatActivity implements SlotAdapter.OnSlotSta
                             chargingStationId = documentSnapshot.getId();
                             Log.d("SlotInfoActivity", "Charging Station ID: " + chargingStationId);
                             // Fetch slot data after obtaining the charging station ID
+                            updateAdapterWithChargingStationId();
+                            
                             fetchSlotData();
                         } else {
                             // No charging station document found
@@ -98,6 +115,14 @@ public class SlotInfo extends AppCompatActivity implements SlotAdapter.OnSlotSta
                     }
                 });
     }
+
+    private void updateAdapterWithChargingStationId() {
+        // Update the slot adapter with the obtained chargingStationId
+        if (chargingStationId != null) {
+            slotAdapter.setChargingStationId(chargingStationId);
+        }
+    }
+
 
     private void fetchSlotData() {
         if (chargingStationId != null) {
@@ -132,13 +157,19 @@ public class SlotInfo extends AppCompatActivity implements SlotAdapter.OnSlotSta
         }
     }
 
-
-
     @Override
     public void onSlotStatusChanged(int position, boolean isChecked) {
         Slot slot = slotList.get(position);
         slot.setOccupied(isChecked);
         updateSlotStatusInFirestore(slot);
+    }
+
+    // Implement the method from the interface to handle slot clicks
+    @Override
+    public void onSlotClick(String slotId) {
+        // Handle slot click here
+        selectedSlotId = slotId; // Update the selectedSlotId with the clicked slot ID
+        Toast.makeText(this, "Slot ID: " + slotId + " clicked", Toast.LENGTH_SHORT).show();
     }
 
     private void updateSlotStatusInFirestore(Slot slot) {

@@ -32,10 +32,13 @@
         <entry key="..\:/Users/Admin/Desktop/Rapidrives-master/Rapidrives-master/app/src/main/res/drawable/left_arrow_ic.xml" value="0.1465" />
         <entry key="..\:/Users/Admin/Desktop/Rapidrives-master/Rapidrives-master/app/src/main/res/drawable/review_item_layout.xml" value="0.11" />
         <entry key="..\:/Users/Admin/Desktop/Rapidrives-master/Rapidrives-master/app/src/main/res/drawable/round.xml" value="0.1125" />
+        <entry key="..\:/Users/Admin/Desktop/Rapidrives-master/Rapidrives-master/app/src/main/res/drawable/rounded_button.xml" value="0.1465" />
+        <entry key="..\:/Users/Admin/Desktop/Rapidrives-master/Rapidrives-master/app/src/main/res/drawable/selected_button_background.xml" value="0.1465" />
         <entry key="..\:/Users/Admin/Desktop/Rapidrives-master/Rapidrives-master/app/src/main/res/layout/activity_about_us.xml" value="0.22083333333333333" />
         <entry key="..\:/Users/Admin/Desktop/Rapidrives-master/Rapidrives-master/app/src/main/res/layout/activity_book_aslot.xml" value="0.225" />
         <entry key="..\:/Users/Admin/Desktop/Rapidrives-master/Rapidrives-master/app/src/main/res/layout/activity_details.xml" value="0.25" />
         <entry key="..\:/Users/Admin/Desktop/Rapidrives-master/Rapidrives-master/app/src/main/res/layout/activity_entermobilenumberone.xml" value="0.22" />
+        <entry key="..\:/Users/Admin/Desktop/Rapidrives-master/Rapidrives-master/app/src/main/res/layout/activity_evinfo.xml" value="0.225" />
         <entry key="..\:/Users/Admin/Desktop/Rapidrives-master/Rapidrives-master/app/src/main/res/layout/activity_get_started.xml" value="0.225" />
         <entry key="..\:/Users/Admin/Desktop/Rapidrives-master/Rapidrives-master/app/src/main/res/layout/activity_help.xml" value="0.225" />
         <entry key="..\:/Users/Admin/Desktop/Rapidrives-master/Rapidrives-master/app/src/main/res/layout/activity_home.xml" value="0.2" />
@@ -48,6 +51,7 @@
         <entry key="..\:/Users/Admin/Desktop/Rapidrives-master/Rapidrives-master/app/src/main/res/layout/activity_owner_page.xml" value="0.22" />
         <entry key="..\:/Users/Admin/Desktop/Rapidrives-master/Rapidrives-master/app/src/main/res/layout/activity_privacy.xml" value="0.2" />
         <entry key="..\:/Users/Admin/Desktop/Rapidrives-master/Rapidrives-master/app/src/main/res/layout/activity_slot_info.xml" value="0.25" />
+        <entry key="..\:/Users/Admin/Desktop/Rapidrives-master/Rapidrives-master/app/src/main/res/layout/activity_time.xml" value="0.225" />
         <entry key="..\:/Users/Admin/Desktop/Rapidrives-master/Rapidrives-master/app/src/main/res/layout/activity_user.xml" value="0.225" />
         <entry key="..\:/Users/Admin/Desktop/Rapidrives-master/Rapidrives-master/app/src/main/res/layout/activity_verifyenterotptwo.xml" value="0.225" />
         <entry key="..\:/Users/Admin/Desktop/Rapidrives-master/Rapidrives-master/app/src/main/res/layout/fragment_add_point.xml" value="0.225" />
@@ -55,9 +59,11 @@
         <entry key="..\:/Users/Admin/Desktop/Rapidrives-master/Rapidrives-master/app/src/main/res/layout/item_review.xml" value="0.33" />
         <entry key="..\:/Users/Admin/Desktop/Rapidrives-master/Rapidrives-master/app/src/main/res/layout/item_slot.xml" value="0.2" />
         <entry key="..\:/Users/Admin/Desktop/Rapidrives-master/Rapidrives-master/app/src/main/res/layout/item_slot2.xml" value="0.225" />
+        <entry key="..\:/Users/Admin/Desktop/Rapidrives-master/Rapidrives-master/app/src/main/res/layout/item_time_slot.xml" value="0.225" />
         <entry key="..\:/Users/Admin/Desktop/Rapidrives-master/Rapidrives-master/app/src/main/res/layout/on_boarding1.xml" value="0.225" />
         <entry key="..\:/Users/Admin/Desktop/Rapidrives-master/Rapidrives-master/app/src/main/res/layout/on_boarding2.xml" value="0.225" />
         <entry key="..\:/Users/Admin/Desktop/Rapidrives-master/Rapidrives-master/app/src/main/res/layout/review_item_layout.xml" value="0.21979166666666666" />
+        <entry key="..\:/Users/Admin/Desktop/Rapidrives-master/Rapidrives-master/app/src/main/res/layout/rv_items.xml" value="0.225" />
         <entry key="..\:/Users/Admin/Desktop/Rapidrives-master/Rapidrives-master/app/src/main/res/layout/slider_screen.xml" value="0.225" />
         <entry key="..\:/Users/Admin/Desktop/backup RapiDrive/SmartVehicles/app/src/main/res/drawable/camera_ic.xml" value="0.2315" />
         <entry key="..\:/Users/Admin/Desktop/backup RapiDrive/SmartVehicles/app/src/main/res/drawable/charging_station.xml" value="0.1835" />

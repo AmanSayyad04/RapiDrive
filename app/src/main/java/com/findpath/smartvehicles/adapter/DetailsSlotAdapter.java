@@ -16,11 +16,19 @@ public class DetailsSlotAdapter extends RecyclerView.Adapter<DetailsSlotAdapter.
 
     private Context context;
     private List<Slot> slotList;
-    private int selectedPosition = RecyclerView.NO_POSITION;
+    private OnSlotClickListener onSlotClickListener;
 
     public DetailsSlotAdapter(Context context, List<Slot> slotList) {
         this.context = context;
         this.slotList = slotList;
+    }
+
+    public interface OnSlotClickListener {
+        void onSlotClick(Slot slot);
+    }
+
+    public void setOnSlotClickListener(OnSlotClickListener listener) {
+        this.onSlotClickListener = listener;
     }
 
     @NonNull
@@ -33,7 +41,7 @@ public class DetailsSlotAdapter extends RecyclerView.Adapter<DetailsSlotAdapter.
     @Override
     public void onBindViewHolder(@NonNull DetailsSlotViewHolder holder, int position) {
         Slot slot = slotList.get(position);
-        holder.bind(slot, position);
+        holder.bind(slot);
     }
 
     @Override
@@ -54,25 +62,29 @@ public class DetailsSlotAdapter extends RecyclerView.Adapter<DetailsSlotAdapter.
             textViewPricePerUnit = itemView.findViewById(R.id.textViewPricePerUnit);
             textViewOption = itemView.findViewById(R.id.textViewOption);
             radioButtonSlot = itemView.findViewById(R.id.radioButtonSlot);
+
             itemView.setOnClickListener(this);
             radioButtonSlot.setOnClickListener(this);
         }
 
-        public void bind(Slot slot, int position) {
+        public void bind(Slot slot) {
             textViewSlotNumber.setText(slot.getSlotNumber());
             textViewPricePerUnit.setText(slot.getPricePerUnit());
             textViewOption.setText(slot.getSelectedOption());
-
-            // Set the radio button checked status based on the selected position
-            radioButtonSlot.setChecked(position == selectedPosition);
+            radioButtonSlot.setChecked(slot.isSelected());
         }
 
         @Override
         public void onClick(View v) {
             int position = getAdapterPosition();
             if (position != RecyclerView.NO_POSITION) {
-                selectedPosition = position;
+                Slot slot = slotList.get(position);
+                slot.setSelected(!slot.isSelected()); // Toggle selection
                 notifyDataSetChanged();
+
+                if (onSlotClickListener != null) {
+                    onSlotClickListener.onSlotClick(slot);
+                }
             }
         }
     }

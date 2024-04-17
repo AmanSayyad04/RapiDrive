@@ -11,15 +11,14 @@
         android:text="Slot Number: "
         android:textSize="16sp" />
 
-    <Button
-        android:id="@+id/buttonSlot"
+    <Switch
+        android:id="@+id/switchSlot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@id/textViewSlotNumber"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:text="Slot Off" />
+        android:layout_marginEnd="24dp" />
 
 
     <TextView
@@ -39,6 +38,16 @@
         android:layout_marginTop="8dp"
         android:text="Selected Option: "
         android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/buttonAddTimeSlot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/textViewSelectedOption"
+        android:layout_toStartOf="@id/textViewSelectedOption"
+        android:layout_marginEnd="14dp"
+        android:layout_alignParentEnd="true"
+        android:text="Add Time Slot"/>
 
     <View
         android:layout_width="match_parent"

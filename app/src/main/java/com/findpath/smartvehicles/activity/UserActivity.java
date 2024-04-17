@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -15,27 +16,13 @@ public class UserActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user);
 
         mAuth = FirebaseAuth.getInstance();
-
-        Intent intent = getIntent();
-        String firstName = intent.getStringExtra("firstName");
-        String lastName = intent.getStringExtra("lastName");
-        String email = intent.getStringExtra("email");
-        // ... other data
-
-        // Update UI with received data
-        TextView firstNameTextView = findViewById(R.id.firstName);
-        TextView lastNameTextView = findViewById(R.id.lastName);
-        TextView emailTextView = findViewById(R.id.emailId);
-
-        firstNameTextView.setText(firstName);
-        lastNameTextView.setText(lastName);
-        emailTextView.setText(email);
 
         TextView myProfile = findViewById(R.id.myProfile);
         TextView myFavouriteSpot = findViewById(R.id.myFavouriteSpot);
@@ -48,6 +35,7 @@ public class UserActivity extends AppCompatActivity {
         Button addMoney = findViewById(R.id.addMoney);
         TextView help = findViewById(R.id.help);
         Button logOut = findViewById(R.id.btnLogout);
+
 
         myProfile.setOnClickListener(new View.OnClickListener() {
             @Override

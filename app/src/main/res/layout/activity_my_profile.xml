@@ -9,12 +9,12 @@
     <ImageView
         android:id="@+id/profileImageView"
         android:layout_width="120dp"
-        android:background="@drawable/round"
-        android:src="@drawable/camera_ic"
-        android:hint="Profile Pic"
         android:layout_height="120dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp" />
+        android:layout_marginTop="32dp"
+        android:background="@drawable/round"
+        android:hint="Profile Pic"
+        android:src="@drawable/camera_ic" />
 
     <Button
         android:id="@+id/uplod_img"
@@ -23,8 +23,8 @@
         android:layout_below="@id/profileImageView"
         android:layout_centerHorizontal="true"
 
-        android:backgroundTint="@color/colorAccent"
         android:layout_marginTop="16dp"
+        android:backgroundTint="@color/colorAccent"
         android:text="Upload" />
 
 
@@ -77,8 +77,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/emailEditText"
         android:layout_centerHorizontal="true"
-        android:backgroundTint="@color/colorAccent"
         android:layout_marginTop="16dp"
+        android:backgroundTint="@color/colorAccent"
         android:text="Update" />
 
 </RelativeLayout>

@@ -26,4 +26,12 @@
         <item>Option 3</item>
     </string-array>
 
+    <!--    <string name="select_timing_prompt">Select timing</string>-->
+    <!--    <string-array name="timing_options">-->
+    <!--        <item>Morning</item>-->
+    <!--        <item>Afternoon</item>-->
+    <!--        <item>Evening</item>-->
+    <!--        &lt;!&ndash; Add more timing options as needed &ndash;&gt;-->
+    <!--    </string-array>-->
+
 </resources>

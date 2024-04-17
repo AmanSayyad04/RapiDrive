@@ -218,6 +218,7 @@ public class NavigatorActivity extends FragmentActivity implements
                 String title = marker.getTitle();
                 LatLng markerLatLng = marker.getPosition();
                 String address = getAddressFromLatLng(markerLatLng);
+
                 // Handle marker click event
                 // You can perform actions like showing an info window, opening a new activity, etc.
                 Intent intent = new Intent(NavigatorActivity.this, DetailsActivity.class);
@@ -310,6 +311,7 @@ public class NavigatorActivity extends FragmentActivity implements
                 });
     }
 
+
     private void addCustomMarker(LatLng latLng, String title) {
         Bitmap customMarkerBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.charg_ic);
         BitmapDescriptor customMarkerIcon = BitmapDescriptorFactory.fromBitmap(customMarkerBitmap);
@@ -319,8 +321,11 @@ public class NavigatorActivity extends FragmentActivity implements
                 .title(title)
                 .icon(customMarkerIcon));
 
-        customMarkers.add(marker);
+        customMarkers.add(marker); // Add the marker to the list
+        Log.d(TAG, "Marker added: " + title + " (" + latLng.latitude + ", " + latLng.longitude + ")");
+        Log.d(TAG, "Total markers: " + customMarkers.size());
     }
+
 
 
 

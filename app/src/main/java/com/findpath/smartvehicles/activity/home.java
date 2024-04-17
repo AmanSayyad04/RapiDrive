@@ -3,17 +3,21 @@ package com.findpath.smartvehicles.activity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
@@ -29,7 +33,10 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
 
 public class home extends AppCompatActivity {
-
+    RecyclerView rv;
+    ArrayList<String> dataSource;
+    LinearLayoutManager linearLayoutManager;
+    MyRvAdapter myRvAdapter;
     private AdView mAdView;
     private BottomNavigationView bottomNavigationView;
     private FrameLayout frameLayout;
@@ -39,18 +46,26 @@ public class home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        //
+        rv=findViewById(R.id.horizontalRv);//
 
         ImageView drawerImageView = findViewById(R.id.user);
-        Button aboutUs = findViewById(R.id.aboutUs);
 
-        aboutUs.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(home.this, AboutUs.class);
-                startActivity(intent);
-            }
-        });
+        //Data Source
+        dataSource=new ArrayList<>();
+        dataSource.add("First station...");
+        dataSource.add("second station...");
+        dataSource.add("Third station...");
+        dataSource.add("Fourth station...");
+        dataSource.add("Fifth station...");
+        dataSource.add("Sixth station...");
+        dataSource.add("Seventh station...");
+        dataSource.add("Eighth station...");
 
+        linearLayoutManager = new LinearLayoutManager(home.this,LinearLayoutManager.HORIZONTAL,false);
+        myRvAdapter = new MyRvAdapter(dataSource);
+        rv.setLayoutManager(linearLayoutManager);
+        rv.setAdapter(myRvAdapter);
         drawerImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -146,6 +161,40 @@ public class home extends AppCompatActivity {
 
     }
 
+    class MyRvAdapter extends  RecyclerView.Adapter<MyRvAdapter.MyHolder>{
+        ArrayList<String> data;
+
+        public MyRvAdapter(ArrayList<String> data) {
+            this.data=data;
+        }
+
+        @NonNull
+        @Override
+        public MyHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            View view = LayoutInflater.from(home.this).inflate(R.layout.rv_items,parent,false);
+            return new MyHolder(view);
+        }
+
+        @Override
+        public void onBindViewHolder(@NonNull MyHolder holder, int position) {
+            holder.tvTitle.setText(data.get(position));
+        }
+
+        @Override
+        public int getItemCount() {
+            return data.size();
+        }
+
+        class MyHolder extends RecyclerView.ViewHolder{
+            TextView tvTitle;
+            public MyHolder(@NonNull View itemView) {
+                super(itemView);
+                tvTitle=itemView.findViewById(R.id.tvTitle);
+            }
+        }
+
+    }
+
     @Override
     public void onBackPressed() {
         super.onBackPressed();
@@ -165,5 +214,7 @@ public class home extends AppCompatActivity {
             }
         });
         alertDialog.show();
+
+
     }
 }
